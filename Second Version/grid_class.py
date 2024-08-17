@@ -2,6 +2,7 @@ import numpy as np
 import random
 
 
+
 class minesweeper:
     def __init__(self,grid_row,grid_column,number_of_mines):
         self.grid_row = grid_row
@@ -36,7 +37,7 @@ class minesweeper:
                          (i - 1, j + 1)])
 
         #Check if the coordinate in the list is valid and not out of bounds.
-        # --> If yes, add +1 in to that cell
+        # --> If yes: Check if it is not a mine --> If not, add +1 into that cell
         for coordinate in mine_adjacent_cells:
             if coordinate[0] <= self.grid_row - 1 and coordinate[1] <= self.grid_column - 1 and coordinate[0] >= 0 and \
                     coordinate[1] >= 0:
