@@ -1,13 +1,11 @@
 import pygame
-from game_class import game
+from game_class import Game
 import pygame_widgets
 
 pygame.init()
 
-game = game()
+game = Game()
 running = True
-
-game.framework.clock.start()
 
 while running:
     events = pygame.event.get()
@@ -17,8 +15,6 @@ while running:
             running = False
 
     game.update()
-    game.settings.row_output.setText(game.settings.row_slider.getValue())
-    game.settings.column_output.setText(game.settings.column_slider.getValue())
     pygame_widgets.update(events)
     pygame.display.update()
 
